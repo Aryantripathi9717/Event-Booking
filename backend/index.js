@@ -4,11 +4,17 @@ import cors from "cors"
 import mongoose from "mongoose"
 import { connectDB } from "./config/db.js"
 import authRouter from "./routes/auth.js"
+import dns from "dns"
 
-const app = express()
 dotenv.config()
+const app = express()
 app.use(cors());
 app.use(express.json())
+
+dns.setServers([
+    '1.1.1.1',
+    '8.8.8.8'
+])
 
 //routes
 app.use('/api/auth',authRouter);
