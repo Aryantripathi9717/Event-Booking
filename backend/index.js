@@ -11,13 +11,13 @@ const app = express()
 app.use(cors());
 app.use(express.json())
 
+
+//routes
+app.use('/api/auth',authRouter);
 dns.setServers([
     '1.1.1.1',
     '8.8.8.8'
 ])
-
-//routes
-app.use('/api/auth',authRouter);
 
 const port = process.env.PORT || 5000
 
