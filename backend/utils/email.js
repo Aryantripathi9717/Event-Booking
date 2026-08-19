@@ -45,21 +45,11 @@ export const sendOtpEmail = async (email,Option,type) =>{
             subject : "Your OTP Code",
             html : `
                    <div style="text-align: center; padding: 20px;">
-
                         <p>${msg}</p>
-
-                    <p style="
-                                padding: 10px;
-                                font-size: 24px;
-                                font-weight: bold;
-                                background: #f4f4f4;
-                                width: max-content;
-                                letter-spacing: 5px;
+                        <p style="padding: 10px; font-size: 24px; font-weight: bold; background: #f4f4f4; width: max-content; letter-spacing: 5px;
                             ">${otp}</p>
-
-                            <p>This code expires in 5 minutes. If you didn't request this, please ignore this email.</p>
-
-                        </div> 
+                        <p>This code expires in 5 minutes. If you didn't request this, please ignore this email.</p>
+                    </div> 
             `
         };
     
