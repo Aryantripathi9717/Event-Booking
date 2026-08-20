@@ -34,13 +34,13 @@ export const getEventById = async (req,res) => {
 
 
 export const createEvent = async (req,res) => {
-    const {title, description, data, location, category, totalSeats, ticketPrice, imageUrl} = req.body;
+    const {title, description, date, location, category, totalSeats, ticketPrice, imageUrl} = req.body;
 
     try{
         const event = await Event.create({
             title,
             description, 
-            data, 
+            date, 
             location, 
             category,
             totalSeats,

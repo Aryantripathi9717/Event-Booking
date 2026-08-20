@@ -17,7 +17,7 @@ app.use(express.json())
 //routes
 app.use('/api/auth',authRouter);
 app.use('/api/events', eventRouter);
-app.use('/api/bookings', bookingRouter)
+app.use('/api/bookings', bookingRouter);
 
 dns.setServers([
     '1.1.1.1',
