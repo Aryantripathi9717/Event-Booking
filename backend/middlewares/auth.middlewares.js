@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 import { User } from "../models/User.js";
 
 
-export const protect = async (req,resizeBy,next)=>{
+export const protect = async (req,res,next)=>{
     let token = req.headers.authorization && req.headers.authorization.startsWith('Bearer') ? req.headers.authorization.split(' ')[1] : null;
 
     if(token){

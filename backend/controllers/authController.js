@@ -62,7 +62,7 @@ export const loginUser = async (req,res)=>{
             return res.status(400).json({message : "Incorrect Password"});
         }
 
-        if(!user.isVerified && user.role === 'user'){
+        if(!existUser.isVerified && user.role === 'user'){
             const otp = Math.floor(100000 + Math.random()*900000).toString();
             await OTP.deleteMany({email,action : "account_verification"}) // Remove old OTPs
             await OTP.create({email, otp, action : 'account_verification'})
@@ -85,7 +85,7 @@ export const loginUser = async (req,res)=>{
             token : generateToken(existUser._id, existUser.role)
             });
     } catch (error) {
-        return res.status(401).json({message : "Login Error", error : error})
+        return res.status(401).json( error.message)
     }
 }
 

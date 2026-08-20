@@ -33,7 +33,7 @@ export const sendBookingEmail = async (userEmail,userName,eventTitle) => {
     }
 }
 
-export const sendOtpEmail = async (email,Option,type) =>{
+export const sendOtpEmail = async (email,otp,type) =>{
     try {
 
         const title = type === 'account_verification' ? 'Verfiy your Eventora Account' : 'Eventora Booking Verification'
