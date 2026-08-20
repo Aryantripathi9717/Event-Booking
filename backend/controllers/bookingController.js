@@ -66,6 +66,11 @@ export const confirmBooking = async (req,res) => {
         if (booking.status === 'confirmed') return res.status(400).json({ message: 'Booking is already confirmed' });
 
         const event = await Event.findById(booking.eventId._id);
+        if (!event) {
+                return res.status(404).json({
+                         message: 'Event not found'
+            });
+}
         if (event.availableSeats <= 0) {
             return res.status(400).json({ message: 'No seats available to confirm this booking' });
         }
